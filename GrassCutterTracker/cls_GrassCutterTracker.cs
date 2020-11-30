@@ -12,9 +12,9 @@ namespace GrassCutterTracker
 
         public static Dictionary<string, cls_Item> ItemList { get => _ItemList; }
 
-        private static string fileName = "GrassCutterTracker.dat";
+        //private static string fileName = "GrassCutterTracker.dat";
 
-        public static void Save()
+        public static void Save(string fileName)
         {
             using (FileStream lcFileStream = new FileStream(fileName, FileMode.Create))
             {
@@ -23,7 +23,7 @@ namespace GrassCutterTracker
             }
         }
 
-        public static void Retrieve()
+        public static void Retrieve(string fileName)
         {
             using (FileStream lcfileStream = new FileStream(fileName, FileMode.Open))
             {

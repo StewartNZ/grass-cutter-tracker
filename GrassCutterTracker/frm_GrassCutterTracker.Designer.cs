@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_GrassCutterTracker));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_AddItem = new System.Windows.Forms.Button();
             this.dgv_Items = new System.Windows.Forms.DataGridView();
@@ -37,6 +38,8 @@
             this.btn_Close = new System.Windows.Forms.Button();
             this.cbo_Sort = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_Load = new System.Windows.Forms.Button();
+            this.btn_SaveAs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Items)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,14 +70,14 @@
             this.dgv_Items.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Items.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgv_Items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Items.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Items.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Items.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv_Items.Location = new System.Drawing.Point(39, 137);
             this.dgv_Items.MultiSelect = false;
@@ -108,7 +111,7 @@
             // 
             // btn_Close
             // 
-            this.btn_Close.Location = new System.Drawing.Point(453, 341);
+            this.btn_Close.Location = new System.Drawing.Point(453, 370);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(75, 23);
             this.btn_Close.TabIndex = 5;
@@ -135,11 +138,33 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Sort By:";
             // 
+            // btn_Load
+            // 
+            this.btn_Load.Location = new System.Drawing.Point(453, 341);
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.Size = new System.Drawing.Size(75, 23);
+            this.btn_Load.TabIndex = 8;
+            this.btn_Load.Text = "Load File";
+            this.btn_Load.UseVisualStyleBackColor = true;
+            this.btn_Load.Click += new System.EventHandler(this.btn_Load_Click);
+            // 
+            // btn_SaveAs
+            // 
+            this.btn_SaveAs.Location = new System.Drawing.Point(372, 341);
+            this.btn_SaveAs.Name = "btn_SaveAs";
+            this.btn_SaveAs.Size = new System.Drawing.Size(75, 23);
+            this.btn_SaveAs.TabIndex = 8;
+            this.btn_SaveAs.Text = "Save As";
+            this.btn_SaveAs.UseVisualStyleBackColor = true;
+            this.btn_SaveAs.Click += new System.EventHandler(this.btn_SaveAs_Click);
+            // 
             // frm_GrassCutterTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 401);
+            this.ClientSize = new System.Drawing.Size(584, 423);
+            this.Controls.Add(this.btn_SaveAs);
+            this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbo_Sort);
             this.Controls.Add(this.btn_Close);
@@ -148,6 +173,7 @@
             this.Controls.Add(this.dgv_Items);
             this.Controls.Add(this.btn_AddItem);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_GrassCutterTracker";
             this.Text = "Grass Cutter Tracker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_GrassCutterTracker_FormClosing);
@@ -168,5 +194,7 @@
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.ComboBox cbo_Sort;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_Load;
+        private System.Windows.Forms.Button btn_SaveAs;
     }
 }

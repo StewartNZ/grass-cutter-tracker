@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Item));
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.cbo_Type = new System.Windows.Forms.ComboBox();
             this.dtp_Date = new System.Windows.Forms.DateTimePicker();
@@ -48,7 +49,7 @@
             this.txt_Name.Location = new System.Drawing.Point(100, 101);
             this.txt_Name.MinimumSize = new System.Drawing.Size(4, 21);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(200, 21);
+            this.txt_Name.Size = new System.Drawing.Size(200, 20);
             this.txt_Name.TabIndex = 0;
             // 
             // cbo_Type
@@ -151,7 +152,7 @@
             this.txt_Code.MaxLength = 10;
             this.txt_Code.MinimumSize = new System.Drawing.Size(4, 21);
             this.txt_Code.Name = "txt_Code";
-            this.txt_Code.Size = new System.Drawing.Size(200, 21);
+            this.txt_Code.Size = new System.Drawing.Size(200, 20);
             this.txt_Code.TabIndex = 0;
             // 
             // label5
@@ -181,6 +182,7 @@
             this.Controls.Add(this.cbo_Type);
             this.Controls.Add(this.txt_Code);
             this.Controls.Add(this.txt_Name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Item";
             this.Text = "Item";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Item_FormClosing);

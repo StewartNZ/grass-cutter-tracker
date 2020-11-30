@@ -14,6 +14,8 @@ namespace GrassCutterTracker
         private IComparer<cls_Item>[] _Comparer = { new cls_PaidComparer(), new cls_DateComparer(), new cls_NameComparer() };
         private readonly string[] _SortStrings = { "Paid", "Date", "Name" };
 
+        private string fileName = "GrassCutterTracker.dat";
+
         public frm_GrassCutterTracker()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace GrassCutterTracker
 
             try
             {
-                cls_GrassCutterTracker.Retrieve();
+                cls_GrassCutterTracker.Retrieve(fileName);
                 UpdateDisplay();
             }
             catch (Exception ex)
@@ -196,7 +198,7 @@ namespace GrassCutterTracker
 
         private void frm_GrassCutterTracker_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cls_GrassCutterTracker.Save();
+            cls_GrassCutterTracker.Save(fileName);
         }
 
         private void btn_DeleteItem_Click(object sender, EventArgs e)
@@ -226,6 +228,36 @@ namespace GrassCutterTracker
 
         private void cbo_Sort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateDisplay();
+        }
+
+        private void btn_SaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Dat File|*.dat|All Files|*.*";
+            saveFileDialog1.Title = "Save Items";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                cls_GrassCutterTracker.Save(saveFileDialog1.FileName);
+            }
+        }
+
+        private void btn_Load_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                //openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "All Files|*.*|Dat File|*.dat";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    cls_GrassCutterTracker.Retrieve(openFileDialog.FileName);
+                }
+            }
             UpdateDisplay();
         }
     }
