@@ -1,2 +1,3 @@
-# grass-cutter-tracker
-Job tracker I made to keep track of the jobs I do as grass cutter using visual studio forms
+# Grass Cutter Tracker
+It's a simple app for keeping track of jobs I do as the grass cutter. It stores a code for the job, the name of the job, when the job was done and if I've been paid for the job.
+Built using Visual Studio Forms (C# Windows Forms .NET Framework)
